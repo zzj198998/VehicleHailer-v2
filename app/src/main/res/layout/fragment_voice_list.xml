@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF9FAFB"
+    android:padding="16dp">
+
+    <!-- 标题 + 操作按钮横排（参考鱼蛋语音积木） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab_voice"
+            android:textColor="#FF1F2937"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_voice"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="@string/btn_add_voice"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            app:cornerRadius="22dp"
+            app:backgroundTint="#FF2563EB"
+            android:textColor="#FFFFFFFF" />
+    </LinearLayout>
+
+    <!-- 分类筛选横向Chip（大圆角大间距） -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#FFE5E7EB"
+        app:cardBackgroundColor="#FFFFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_category"
+                android:textColor="#FF6B7280"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="4dp"
+                android:paddingBottom="8dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/tab_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    app:chipSpacing="12dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_custom"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/filter_custom"
+                        android:textSize="14sp"
+                        android:textColor="#FF1F2937"
+                        app:chipBackgroundColor="#FFF3F4F6"
+                        app:chipStrokeColor="#FFE5E7EB"
+                        app:chipStrokeWidth="0dp"
+                        app:chipCornerRadius="20dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_system"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/filter_system"
+                        android:textSize="14sp"
+                        app:chipBackgroundColor="#FFF3F4F6"
+                        app:chipStrokeColor="#FFE5E7EB"
+                        app:chipStrokeWidth="0dp"
+                        app:chipCornerRadius="20dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_all"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/filter_all"
+                        android:textSize="14sp"
+                        app:chipBackgroundColor="#FFF3F4F6"
+                        app:chipStrokeColor="#FFE5E7EB"
+                        app:chipStrokeWidth="0dp"
+                        app:chipCornerRadius="20dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </HorizontalScrollView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 搜索框（加大高度） -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/search_card"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="26dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#FFE5E7EB"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#FFFFFFFF">
+
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:hint="@string/search_voice_hint"
+            android:textColorHint="#FF9CA3AF"
+            android:textColor="#FF1F2937"
+            android:textSize="15sp"
+            android:background="#00000000"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="12dp"
+            android:drawableTint="#FF9CA3AF" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 语音列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/voice_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="4dp" />
+
+</LinearLayout>

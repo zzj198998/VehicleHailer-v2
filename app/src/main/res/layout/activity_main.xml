@@ -1,0 +1,229 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#FFF9FAFB">
+
+    <!-- ========== 左侧导航栏（70dp固定宽度，白底） ========== -->
+    <LinearLayout
+        android:id="@+id/nav_sidebar"
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFFFF"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:elevation="2dp">
+
+        <!-- Logo区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="📢"
+            android:textSize="24sp"
+            android:layout_marginBottom="1dp"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#FF1F2937"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="1dp"
+            android:background="#FFE5E7EB"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp" />
+
+        <!-- 导航按钮 — 喊话（默认选中） -->
+        <LinearLayout
+            android:id="@+id/nav_voice"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/sidebar_item_selected"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/tab_voice"
+            android:paddingVertical="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_media_play"
+                android:tint="#FF3B82F6"
+                android:contentDescription="@string/nav_icon_voice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_voice"
+                android:textColor="#FF3B82F6"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_monitor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/sidebar_item_normal"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/tab_monitor"
+            android:paddingVertical="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_view"
+                android:tint="#FF6B7280"
+                android:contentDescription="@string/nav_icon_monitor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_monitor"
+                android:textColor="#FF6B7280"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_trigger"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/sidebar_item_normal"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/tab_trigger"
+            android:paddingVertical="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_edit"
+                android:tint="#FF6B7280"
+                android:contentDescription="@string/nav_icon_trigger" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_trigger"
+                android:textColor="#FF6B7280"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_audio_library"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/sidebar_item_normal"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/tab_audio_library"
+            android:paddingVertical="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:tint="#FF6B7280"
+                android:contentDescription="@string/nav_icon_audio" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_audio_library"
+                android:textColor="#FF6B7280"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_settings"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/sidebar_item_normal"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/tab_settings"
+            android:paddingVertical="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_preferences"
+                android:tint="#FF6B7280"
+                android:contentDescription="@string/nav_icon_settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_settings"
+                android:textColor="#FF6B7280"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- 底部版本和状态 — 加大字号便于车机远距离查看 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/version_short"
+            android:textColor="#FF9CA3AF"
+            android:textSize="9sp"
+            android:paddingTop="6dp"
+            android:paddingBottom="2dp" />
+
+        <TextView
+            android:id="@+id/connection_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/status_offline"
+            android:textColor="#FFEF4444"
+            android:textSize="9sp"
+            android:paddingBottom="4dp" />
+
+    </LinearLayout>
+
+    <!-- 分割线 -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#FFE5E7EB" />
+
+    <!-- 右侧内容区 -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#FFF9FAFB" />
+
+</LinearLayout>

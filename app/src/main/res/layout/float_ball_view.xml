@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/float_ball_bg"
+    android:layout_width="60dp"
+    android:layout_height="60dp">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/iv_float_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_mic"
+        android:tint="@color/white"/>
+    <View
+        android:layout_gravity="bottom|right"
+        android:id="@+id/view_recording_indicator"
+        android:background="@drawable/circle_red"
+        android:visibility="gone"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_margin="5dp"/>
+</FrameLayout>
