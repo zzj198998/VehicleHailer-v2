@@ -18,17 +18,6 @@ import java.util.Map;
  * - Data URI
  * - Extra参数（支持String/Integer/Boolean/Map）
  * - 多种发送方式（startActivity / startService / sendBroadcast）
- *
- * 对比鱼蛋的 SendIntentAction：
- * 鱼蛋功能：
- * - mAction / mTargetPackage / mTargetClass / mDataUri / mDeliveryMethod / mExtras
- * - 通过 onStartImplement() 中的 switch 处理不同 deliveryMethod
- *
- * 我们增强：
- * - 更多Extra类型支持（int/boolean/long/float，鱼蛋只支持String）
- * - 更清晰的DeliveryMethod枚举而非字符串硬编码
- * - Builder模式构建
- * - 详细的日志和异常处理
  */
 public class SendIntentAction extends VehicleActionBase {
 
@@ -36,9 +25,9 @@ public class SendIntentAction extends VehicleActionBase {
 
     /** 发送方式 */
     public enum DeliveryMethod {
-        START_ACTIVITY,     // startActivity
-        START_SERVICE,      // startService
-        SEND_BROADCAST      // sendBroadcast
+        START_ACTIVITY,
+        START_SERVICE,
+        SEND_BROADCAST
     }
 
     // 构造参数
@@ -53,19 +42,13 @@ public class SendIntentAction extends VehicleActionBase {
     // 内部缓存
     private Context context;
 
-    /**
-     * 最小构造：仅Action + 发送方式（隐式Intent）
-     */
     public SendIntentAction(Context context, String intentAction, DeliveryMethod method) {
-        super(ActionType.SEND_INTENT);
+        super(ActionType.SEND_INTENT.name());
         this.context = context;
         this.intentAction = intentAction;
         this.deliveryMethod = method != null ? method : DeliveryMethod.START_SERVICE;
     }
 
-    /**
-     * 完整构造：显式Intent（指定Package和Class）
-     */
     public SendIntentAction(Context context, String intentAction, String targetPackage,
                             String targetClass, DeliveryMethod method) {
         this(context, intentAction, method);
@@ -73,67 +56,61 @@ public class SendIntentAction extends VehicleActionBase {
         this.targetClass = targetClass;
     }
 
-    /**
-     * Builder模式设置dataUri
-     */
     public SendIntentAction setDataUri(String dataUri) {
         this.dataUri = dataUri;
         return this;
     }
 
-    /**
-     * Builder模式设置extra参数
-     */
     public SendIntentAction setExtras(Map<String, Object> extras) {
         this.extras = extras;
         return this;
     }
 
-    /**
-     * 设置Intent flags
-     */
     public SendIntentAction setFlags(int... flags) {
         this.flags = flags;
         return this;
     }
 
     @Override
-    public void execute() {
+    public ActionType getActionType() {
+        return ActionType.SEND_INTENT;
+    }
+
+    @Override
+    public String getDescription() {
+        return "发送Intent: " + (intentAction != null ? intentAction : "无Action");
+    }
+
+    @Override
+    public boolean execute() {
         if (context == null || TextUtils.isEmpty(intentAction)) {
             Log.e(TAG, "执行失败: context或action为空");
-            setStatus(ActionStatus.FAILED);
-            return;
+            return false;
         }
 
         try {
             Intent intent = new Intent();
 
-            // 设置Action
             if (!TextUtils.isEmpty(intentAction)) {
                 intent.setAction(intentAction);
             }
 
-            // 设置显式目标（Package + Class）
             if (!TextUtils.isEmpty(targetPackage) && !TextUtils.isEmpty(targetClass)) {
                 intent.setComponent(new ComponentName(targetPackage, targetClass));
             }
 
-            // 设置Data URI
             if (!TextUtils.isEmpty(dataUri)) {
                 intent.setData(Uri.parse(dataUri));
             }
 
-            // 设置Extra参数
             putExtras(intent, extras);
 
-            // 设置Flags
             if (flags != null && flags.length > 0) {
                 for (int flag : flags) {
                     intent.addFlags(flag);
                 }
             }
 
-            // 根据发送方式执行
             switch (deliveryMethod) {
                 case START_ACTIVITY:
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -147,18 +124,14 @@ public class SendIntentAction extends VehicleActionBase {
                     break;
             }
 
-            setStatus(ActionStatus.COMPLETED);
+            return true;
         } catch (Exception e) {
             Log.e(TAG, "发送Intent失败: action=" + intentAction
                     + ", pkg=" + targetPackage, e);
-            setStatus(ActionStatus.FAILED);
+            return false;
         }
     }
 
-    /**
-     * 将Map参数注入到Intent中
-     * 支持 String / Integer / Boolean / Long / Float / Double
-     */
     private void putExtras(Intent intent, Map<String, Object> extras) {
         if (extras == null || extras.isEmpty()) return;
 

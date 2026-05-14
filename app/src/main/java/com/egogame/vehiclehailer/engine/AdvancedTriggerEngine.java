@@ -4,10 +4,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
-import com.egogame.vehiclehailer.action.Action;
+import com.egogame.vehiclehailer.action.VehicleActionBase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -177,13 +179,13 @@ public class AdvancedTriggerEngine {
     private void executeSequential(AdvancedTriggerRule rule) {
         // 用Handler实现顺序执行，每完成一个执行下一个
         final int[] index = {0};
-        final List<Action> actions = rule.getActions();
+        final List<VehicleActionBase> actions = rule.getActions();
 
         Runnable nextAction = new Runnable() {
             @Override
             public void run() {
                 if (index[0] >= actions.size()) return;
-                Action action = actions.get(index[0]++);
+                VehicleActionBase action = actions.get(index[0]++);
                 if (action != null) {
                     Log.d(TAG, "顺序执行 [" + index[0] + "/" + actions.size()
                             + "] " + action.getDescription());
@@ -200,7 +202,7 @@ public class AdvancedTriggerEngine {
      * 并行执行：所有Action同时启动
      */
     private void executeParallel(AdvancedTriggerRule rule) {
-        for (Action action : rule.getActions()) {
+        for (VehicleActionBase action : rule.getActions()) {
             if (action != null) {
                 Log.d(TAG, "并行执行: " + action.getDescription());
                 action.execute();

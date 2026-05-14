@@ -1,6 +1,6 @@
 package com.egogame.vehiclehailer.engine;
 
-import com.egogame.vehiclehailer.action.Action;
+import com.egogame.vehiclehailer.action.VehicleActionBase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class AdvancedTriggerRule {
     private String ruleName;                    // 规则名称（用户可自定义）
     private boolean enabled = true;             // 是否启用
     private VehicleConditionChecker conditionChecker; // 触发条件组
-    private final List<Action> actions = new ArrayList<>(); // 动作序列
+    private final List<VehicleActionBase> actions = new ArrayList<>(); // 动作序列
     private ActionMode actionMode = ActionMode.SEQUENTIAL; // 执行模式
 
     /**
@@ -44,7 +44,7 @@ public class AdvancedTriggerRule {
      * 完整构造
      */
     public AdvancedTriggerRule(String ruleName, VehicleConditionChecker conditionChecker,
-                               List<Action> actions, ActionMode actionMode, boolean enabled) {
+                               List<VehicleActionBase> actions, ActionMode actionMode, boolean enabled) {
         this.ruleName = ruleName;
         this.conditionChecker = conditionChecker != null ? conditionChecker : new VehicleConditionChecker();
         if (actions != null) this.actions.addAll(actions);
@@ -70,20 +70,20 @@ public class AdvancedTriggerRule {
         this.actionMode = actionMode != null ? actionMode : ActionMode.SEQUENTIAL;
     }
 
-    public List<Action> getActions() { return new ArrayList<>(actions); }
+    public List<VehicleActionBase> getActions() { return new ArrayList<>(actions); }
     public int getActionCount() { return actions.size(); }
 
     // ---- 动作管理 ----
 
-    public void addAction(Action action) {
+    public void addAction(VehicleActionBase action) {
         if (action != null) actions.add(action);
     }
 
-    public void addActions(List<Action> newActions) {
+    public void addActions(List<VehicleActionBase> newActions) {
         if (newActions != null) actions.addAll(newActions);
     }
 
-    public boolean removeAction(Action action) {
+    public boolean removeAction(VehicleActionBase action) {
         return actions.remove(action);
     }
 
