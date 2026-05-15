@@ -186,7 +186,7 @@ public class PropertyRegCfg {
             }
             if (root.has("models")) {
                 JSONObject models = root.getJSONObject("models");
-                for (String modelName : models.keySet()) {
+                for (String modelName : models.keys()) {
                     JSONArray regsArray = models.getJSONArray(modelName);
                     List<PropertyReg> regs = new ArrayList<>();
                     for (int i = 0; i < regsArray.length(); i++) {

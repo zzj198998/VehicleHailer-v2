@@ -26,6 +26,15 @@ import java.util.concurrent.ConcurrentHashMap;
  * - 模拟声浪固定车外不可更改
  */
 public class AudioRouter {
+    /** 通道配置持久化接口 — 供 BrandChannelConfigStore 桥接 */
+    public interface ChannelConfigPersistence {
+        /** 加载已保存的配置到AudioRouter */
+        boolean load(AudioRouter router);
+        /** 保存单个音源的通道配置 */
+        void save(AudioRouter router, SoundSource source);
+    }
+
+
 
     private static final String TAG = "AudioRouter";
 

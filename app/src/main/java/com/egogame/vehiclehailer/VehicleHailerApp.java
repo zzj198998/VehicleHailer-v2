@@ -1,11 +1,12 @@
 package com.egogame.vehiclehailer;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 
-import com.egogame.vehiclehailer.engine.AutoTriggerEngine;
 import com.egogame.vehiclehailer.engine.ConfigLoader;
-import com.egogame.vehiclehailer.engine.VehicleEventTrigger;
 import com.egogame.vehiclehailer.engine.VehicleStateManager;
 import com.egogame.vehiclehailer.engine.VoicePlayer;
 
@@ -22,8 +23,24 @@ public class VehicleHailerApp extends Application {
     private ConfigLoader configLoader;
     private VehicleStateManager vehicleStateManager;
     private VoicePlayer voicePlayer;
-    private AutoTriggerEngine autoTriggerEngine;
-    private VehicleEventTrigger vehicleEventTrigger;
+
+    /**
+     * 全局主题注入：覆写attachBaseContext，确保所有基于此Application创建的Context
+     * 都强制使用MaterialComponents主题，防止OPPO/小米/华为等厂商系统覆写主题导致Material组件崩溃
+     */
+    @Override
+    protected void attachBaseContext(Context base) {
+        // 用ContextThemeWrapper包裹原始context，强制使用我们的MaterialComponents主题
+        Context themedContext = new ContextThemeWrapper(base, R.style.Theme_VehicleHailer);
+        // 递归确保内部ContextWrapper也被包裹
+        if (base instanceof ContextWrapper) {
+            Context baseContext = ((ContextWrapper) base).getBaseContext();
+            if (baseContext != null) {
+                themedContext = new ContextThemeWrapper(baseContext, R.style.Theme_VehicleHailer);
+            }
+        }
+        super.attachBaseContext(themedContext);
+    }
 
     @Override
     public void onCreate() {
@@ -46,20 +63,6 @@ public class VehicleHailerApp extends Application {
 
         // 初始化声音播放引擎
         voicePlayer = new VoicePlayer(this);
-
-        // 初始化自动触发引擎（监听车辆状态变化，自动播放对应语音）
-        autoTriggerEngine = new AutoTriggerEngine(vehicleStateManager, voicePlayer);
-        Log.d(TAG, "自动触发引擎已初始化");
-
-        // 初始化车辆事件触发引擎（联动规则引擎）
-        vehicleEventTrigger = new VehicleEventTrigger(voicePlayer);
-        if (configLoader != null) {
-            vehicleEventTrigger.setVoiceMap(configLoader.getVoiceItems());
-        }
-        // 注册到车辆状态管理器的属性变化监听链
-        vehicleStateManager.addListener(autoTriggerEngine);
-        vehicleStateManager.addListener(vehicleEventTrigger);
-        Log.d(TAG, "车辆事件触发引擎已初始化并注册监听");
     }
 
     public static VehicleHailerApp getInstance() {

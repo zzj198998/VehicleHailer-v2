@@ -52,11 +52,11 @@ public class AutoTriggerEngine {
         this.voiceItems = VehicleHailerApp.getInstance().getConfigLoader().getVoiceItems();
 
         // 注册属性变化监听
-        stateManager.addListener((propertyName, oldValue, newValue) -> {
+        stateManager.setOnPropertyChangeListener((propertyName, prevValue, newValue) -> {
             if (!enabled) return;
 
-            String prevValue = lastPropertyValues.get(propertyName);
-            if (prevValue == null || !prevValue.equals(newValue)) {
+            String oldValue = lastPropertyValues.get(propertyName);
+            if (oldValue == null || !oldValue.equals(newValue)) {
                 lastPropertyValues.put(propertyName, newValue);
                 // 防抖：属性变化后延迟300ms再判断触发条件
                 debounceTrigger();
@@ -102,10 +102,10 @@ public class AutoTriggerEngine {
         //   1001-1011 系统级：匹配属性值即触发
         //   2001-2018 阻塞级：需满足多个条件组合
 
-        if (item.getTab() == VoiceTab.CUSTOM) {
-            return checkBlockTrigger(item);
-        } else if (item.getTab() == VoiceTab.SYSTEM) {
+        if (item.getTab() == VoiceTab.SYSTEM) {
             return checkSystemTrigger(item);
+        } else if (item.getTab() == VoiceTab.BLOCK) {
+            return checkBlockTrigger(item);
         }
         return false;
     }
@@ -232,18 +232,18 @@ public class AutoTriggerEngine {
     private void triggerVoice(VoiceItem item) {
         Log.d(TAG, "触发语音: id=" + item.getId() + " name=" + item.getName());
 
-        // 自定义音效放车内（STREAM_MUSIC），系统音效放车外（STREAM_VOICE_CALL）
-        if (item.getTab() == VoiceTab.CUSTOM) {
+        // 系统级放车内（STREAM_MUSIC），阻塞级放车外（STREAM_VOICE_CALL）
+        if (item.getTab() == VoiceTab.SYSTEM) {
             voicePlayer.setChannel(VoicePlayer.Channel.INSIDE);
         } else {
             voicePlayer.setChannel(VoicePlayer.Channel.OUTSIDE);
         }
 
-        voicePlayer.play(item.getFilePath());
+        voicePlayer.play(item, item.getTab() == VoiceTab.BLOCK);
         playedVoiceIds.add(item.getId());
 
-        // 自定义音效播放完后自动重置"已播放"状态
-        if (item.getTab() == VoiceTab.CUSTOM) {
+        // 阻塞级语音播放完后自动重置"已播放"状态
+        if (item.getTab() == VoiceTab.BLOCK) {
             handler.postDelayed(() -> {
                 playedVoiceIds.remove(item.getId());
             }, 10000); // 10秒后可再次触发

@@ -272,9 +272,6 @@ public class OutSpeakerManager {
             case AudioManager.AUDIOFOCUS_LOSS: return "LOSS";
             case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT: return "LOSS_TRANSIENT";
             case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK: return "DUCK";
-            case AudioManager.AUDIOFOCUS_REQUEST_GRANTED: return "GRANTED";
-            case AudioManager.AUDIOFOCUS_REQUEST_DELAYED: return "DELAYED";
-            case AudioManager.AUDIOFOCUS_REQUEST_FAILED: return "FAILED";
             default: return "UNKNOWN(" + focusChange + ")";
         }
     }

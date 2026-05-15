@@ -38,23 +38,21 @@ public class VoiceAdapter extends RecyclerView.Adapter<VoiceAdapter.VoiceViewHol
         VoiceItem item = voiceItems.get(position);
         holder.idText.setText(String.valueOf(item.getId()));
         holder.nameText.setText(item.getName());
-        holder.pathText.setText(item.getFilePath());
 
         holder.playButton.setOnClickListener(v -> {
-            voicePlayer.play(item.getFilePath());
-            // 切换播放/暂停按钮状态
+            voicePlayer.play(item, false);
             holder.playButton.setVisibility(View.GONE);
             holder.stopButton.setVisibility(View.VISIBLE);
         });
 
         holder.stopButton.setOnClickListener(v -> {
-            voicePlayer.stop();
+            voicePlayer.stop(item);
             holder.playButton.setVisibility(View.VISIBLE);
             holder.stopButton.setVisibility(View.GONE);
         });
 
         // 预加载声音
-        voicePlayer.preloadVoice(item.getFilePath());
+        voicePlayer.preloadVoice(item);
     }
 
     @Override
@@ -65,7 +63,6 @@ public class VoiceAdapter extends RecyclerView.Adapter<VoiceAdapter.VoiceViewHol
     static class VoiceViewHolder extends RecyclerView.ViewHolder {
         TextView idText;
         TextView nameText;
-        TextView pathText;
         ImageButton playButton;
         ImageButton stopButton;
 
@@ -73,7 +70,6 @@ public class VoiceAdapter extends RecyclerView.Adapter<VoiceAdapter.VoiceViewHol
             super(itemView);
             idText = itemView.findViewById(R.id.voice_id);
             nameText = itemView.findViewById(R.id.voice_name);
-            pathText = itemView.findViewById(R.id.voice_path);
             playButton = itemView.findViewById(R.id.btn_play);
             stopButton = itemView.findViewById(R.id.btn_stop);
         }

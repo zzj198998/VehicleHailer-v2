@@ -24,7 +24,7 @@ public class ActionFactory {
 
     /** 创建器接口：根据参数Map创建Action */
     public interface ActionCreator {
-        Action create(Map<String, Object> params);
+        VehicleActionBase create(Map<String, Object> params);
     }
 
     // 注册表：类型名 → 创建器
