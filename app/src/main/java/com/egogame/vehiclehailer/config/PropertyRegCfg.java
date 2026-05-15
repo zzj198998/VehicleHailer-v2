@@ -189,7 +189,7 @@ public class PropertyRegCfg {
                 JSONObject models = root.getJSONObject("models");
                 java.util.Iterator<String> modelKeys = models.keys();
                 while (modelKeys.hasNext()) {
-                    String modelName = modelKeys.next() {
+                    String modelName = modelKeys.next();
                     JSONArray regsArray = models.getJSONArray(modelName);
                     List<PropertyReg> regs = new ArrayList<>();
                     for (int i = 0; i < regsArray.length(); i++) {
