@@ -21,6 +21,9 @@ jobs:
       - name: Grant execute permission
         run: chmod +x gradlew
 
+      - name: Clean build cache
+        run: ./gradlew clean
+
       - name: Build with Gradle
         run: ./gradlew assembleDebug
 
