@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/background_dark">
+    android:background="#FFF9FAFB"
+    android:padding="0dp">
 
     <!-- ===== 左栏：设置项 ===== -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="8dp">
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,30 +23,33 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="@color/background_card"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE5E7EB"
+                app:cardBackgroundColor="#FFFFFFFF">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/setting_car_model"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textColor="#FF1F2937"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
                     <Spinner
                         android:id="@+id/car_model_spinner"
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/spinner_background"
-                        android:textColor="@color/white"
-                        android:popupBackground="@color/background_card" />
+                        android:textColor="#FF1F2937"
+                        android:textSize="15sp"
+                        android:popupBackground="#FFFFFFFF" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -53,28 +57,31 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="@color/background_card"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE5E7EB"
+                app:cardBackgroundColor="#FFFFFFFF">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/setting_channel"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textColor="#FF1F2937"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
-                    <androidx.appcompat.widget.SwitchCompat
+                    <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/channel_switch"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:textColor="@color/white"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/setting_channel_inside"
+                        android:textSize="15sp"
                         android:checked="true" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -83,48 +90,52 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="@color/background_card"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE5E7EB"
+                app:cardBackgroundColor="#FFFFFFFF">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/setting_tts"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textColor="#FF1F2937"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
-                    <androidx.appcompat.widget.SwitchCompat
+                    <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/tts_enabled_switch"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:textColor="@color/white" />
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/setting_tts_enabled"
+                        android:textSize="15sp" />
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="10dp"
                         app:boxBackgroundMode="outline"
-                        app:boxStrokeColor="@color/primary_light"
+                        app:boxStrokeColor="#FF3B82F6"
                         app:boxStrokeWidth="1dp"
-                        app:hintTextColor="@color/gray_400"
-                        app:boxCornerRadiusTopEnd="8dp"
-                        app:boxCornerRadiusTopStart="8dp"
-                        app:boxCornerRadiusBottomEnd="8dp"
-                        app:boxCornerRadiusBottomStart="8dp">
+                        app:hintTextColor="#FF9CA3AF"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tts_url_input"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/setting_tts_url"
                             android:text="https://app.sk3a.cn/tts/generate"
-                            android:textColor="@color/white"
-                            android:textColorHint="@color/gray_600" />
+                            android:textColor="#FF1F2937"
+                            android:textSize="14sp"
+                            android:textColorHint="#FF9CA3AF" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -133,86 +144,282 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="@color/background_card"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE5E7EB"
+                app:cardBackgroundColor="#FFFFFFFF">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
-                    <androidx.appcompat.widget.SwitchCompat
+                    android:padding="16dp">
+                    <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/auto_play_switch"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
+                        android:layout_height="52dp"
+                        android:text="@string/setting_auto_play"
+                        android:textSize="15sp"
                         android:checked="true" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+                    <!-- 5. 音频流 / 内容类型 / 增益控制 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="#FFFFFFFF"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFE5E7EB"
+                        app:strokeWidth="1dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="14dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="音频流 / 内容类型"
+                                android:textColor="#FF1F2937"
+                                android:textSize="15sp"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="选择车型后自动匹配最佳配置"
+                                android:textColor="#FF6B7280"
+                                android:textSize="11sp"/>
+                            <!-- 音频流类型选择 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/audio_stream_type"
+                                android:textColor="#FF374151"
+                                android:textSize="13sp"/>
+                            <Spinner
+                                android:id="@+id/stream_type_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="2dp"/>
+                            <!-- 内容类型选择 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/audio_content_type"
+                                android:textColor="#FF374151"
+                                android:textSize="13sp"/>
+                            <Spinner
+                                android:id="@+id/content_type_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="2dp"/>
+                            <!-- 分隔线 -->
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="#FFE5E7EB"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/gain_control"
+                                android:textColor="#FF1F2937"
+                                android:textSize="14sp"
+                                android:textStyle="bold"/>
+                            <!-- TTS增益 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gain_tts"
+                                    android:textColor="#FF374151"
+                                    android:textSize="12sp"/>
+                                <SeekBar
+                                    android:id="@+id/gain_tts"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:max="150"
+                                    android:progress="100"/>
+                                <TextView
+                                    android:id="@+id/gain_tts_text"
+                                    android:layout_width="36dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="100%"
+                                    android:textColor="#FF374151"
+                                    android:textSize="11sp"
+                                    android:gravity="end"/>
+                            </LinearLayout>
+                            <!-- 喊话增益 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gain_hail"
+                                    android:textColor="#FF374151"
+                                    android:textSize="12sp"/>
+                                <SeekBar
+                                    android:id="@+id/gain_hail"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:max="150"
+                                    android:progress="100"/>
+                                <TextView
+                                    android:id="@+id/gain_hail_text"
+                                    android:layout_width="36dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="100%"
+                                    android:textColor="#FF374151"
+                                    android:textSize="11sp"
+                                    android:gravity="end"/>
+                            </LinearLayout>
+                            <!-- 录音增益 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gain_record"
+                                    android:textColor="#FF374151"
+                                    android:textSize="12sp"/>
+                                <SeekBar
+                                    android:id="@+id/gain_record"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:max="150"
+                                    android:progress="100"/>
+                                <TextView
+                                    android:id="@+id/gain_record_text"
+                                    android:layout_width="36dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="100%"
+                                    android:textColor="#FF374151"
+                                    android:textSize="11sp"
+                                    android:gravity="end"/>
+                            </LinearLayout>
+                            <!-- 限幅器 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    android:layout_width="70dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gain_limiter"
+                                    android:textColor="#FF374151"
+                                    android:textSize="12sp"/>
+                                <SeekBar
+                                    android:id="@+id/gain_limiter"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:max="12"
+                                    android:progress="6"/>
+                                <TextView
+                                    android:id="@+id/gain_limiter_text"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="-6dB"
+                                    android:textColor="#FF374151"
+                                    android:textSize="11sp"
+                                    android:gravity="end"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
 
             <!-- 连接方式 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="@color/background_card"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE5E7EB"
+                app:cardBackgroundColor="#FFFFFFFF">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/connection_title"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                    android:textColor="#FF1F2937"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/connection_obd"
-                        android:textColor="@color/accent"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/connection_obd"
+                    android:textColor="#FF6B7280"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="@string/connection_obd_desc"
-                        android:textColor="@color/gray_400"
-                        android:textSize="11sp"
-                        android:lineSpacingExtra="3dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/connection_obd_desc"
+                    android:textColor="#FF6B7280"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/connection_logcat"
-                        android:textColor="@color/accent"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/connection_logcat"
+                    android:textColor="#FF6B7280"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="@string/connection_logcat_desc"
-                        android:textColor="@color/gray_400"
-                        android:textSize="11sp"
-                        android:lineSpacingExtra="3dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/connection_logcat_desc"
+                    android:textColor="#FF6B7280"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp" />
                     <TextView
                         android:id="@+id/adb_cmd_self"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:padding="8dp"
+                        android:layout_marginTop="10dp"
+                        android:padding="12dp"
                         android:background="@drawable/code_bg"
                         android:text="@string/connection_adb_cmd_self"
-                        android:textColor="@color/code_text"
-                        android:textSize="10sp"
+                        android:textColor="#FF059669"
+                        android:textSize="11sp"
                         android:fontFamily="monospace"
                         android:clickable="true"
                         android:focusable="true" />
@@ -220,12 +427,12 @@
                         android:id="@+id/adb_cmd_other"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:padding="8dp"
+                        android:layout_marginTop="6dp"
+                        android:padding="12dp"
                         android:background="@drawable/code_bg"
                         android:text="@string/connection_adb_cmd_other"
-                        android:textColor="@color/code_text"
-                        android:textSize="10sp"
+                        android:textColor="#FF059669"
+                        android:textSize="11sp"
                         android:fontFamily="monospace"
                         android:clickable="true"
                         android:focusable="true" />
@@ -233,11 +440,11 @@
                         android:id="@+id/adb_copied_hint"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="6dp"
                         android:text="@string/connection_adb_hint"
-                        android:textColor="@color/gray_600"
-                        android:textSize="10sp"
-                        android:gravity="center" />
+                    android:textColor="#FF9CA3AF"
+                    android:textSize="11sp"
+                    android:gravity="center" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -245,11 +452,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"
-                android:text="\u8f66\u8f86\u558a\u8bdd\u5668 v1.0\n\u57fa\u4e8e\u542f\u6e90Q05\u9006\u5411\u5f00\u53d1"
-                android:textColor="@color/gray_600"
-                android:textSize="11sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:text="无心车机喊话 v1.2.0"
+                android:textColor="#FF9CA3AF"
+                android:textSize="12sp"
                 android:gravity="center" />
 
         </LinearLayout>
@@ -260,7 +467,7 @@
     <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="@color/gray_800" />
+        android:background="#FFE5E7EB" />
 
 
     <!-- ===== 右栏：声道路由设置 ===== -->
@@ -268,7 +475,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="8dp">
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -278,107 +485,108 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardBackgroundColor="@color/background_card"
-                app:cardElevation="0dp">
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE5E7EB"
+                app:cardBackgroundColor="#FFFFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/route_title"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textColor="#FF1F2937"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="4dp"
                         android:text="@string/route_desc"
-                        android:textColor="@color/gray_400"
-                        android:textSize="11sp" />
-
+                        android:textColor="#FF6B7280"
+                        android:textSize="13sp" />
                     <!-- 1. 喊话输出 -->
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardBackgroundColor="@color/background_card_light"
-                        app:cardElevation="0dp">
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#FFE5E7EB"
+                        app:cardBackgroundColor="#FFF9FAFB">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="10dp">
+                            android:padding="14dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/route_hailing"
-                                android:textColor="@android:color/black"
-                                android:textSize="13sp"
+                                android:textColor="#FF1F2937"
+                                android:textSize="15sp"
                                 android:textStyle="bold"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="8dp"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/volume"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="11sp"/>
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="13sp"/>
                                 <SeekBar
                                     android:id="@+id/route_hailing_volume"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:layout_marginHorizontal="6dp"
+                                    android:layout_marginHorizontal="8dp"
                                     android:max="100"
                                     android:progress="80"/>
                                 <TextView
                                     android:id="@+id/route_hailing_volume_text"
-                                    android:layout_width="32dp"
+                                    android:layout_width="36dp"
                                     android:layout_height="wrap_content"
                                     android:text="80%"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="10sp"
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="12sp"
                                     android:gravity="end"/>
                             </LinearLayout>
                             <Spinner
                                 android:id="@+id/route_hailing_channel"
                                 android:layout_width="match_parent"
-                                android:layout_height="28dp"
-                                android:layout_marginTop="2dp"/>
+                                android:layout_height="36dp"
+                                android:layout_marginTop="6dp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="6dp"
                                 android:orientation="horizontal">
-                                <androidx.appcompat.widget.SwitchCompat
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_hailing_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
-                                <androidx.appcompat.widget.SwitchCompat
+                                    android:text="@string/noise_reduction"
+                                    android:textSize="12sp"/>
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_hailing_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
+                                    android:text="@string/voice_enhance"
+                                    android:textSize="12sp"/>
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -388,77 +596,77 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardBackgroundColor="@color/background_card_light"
-                        app:cardElevation="0dp">
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="#FFFFFFFF"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFE5E7EB"
+                        app:strokeWidth="1dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="10dp">
+                            android:padding="14dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/route_door"
-                                android:textColor="@android:color/black"
-                                android:textSize="13sp"
+                                android:textColor="#FF1F2937"
+                                android:textSize="15sp"
                                 android:textStyle="bold"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="6dp"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/volume"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="11sp"/>
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="13sp"/>
                                 <SeekBar
                                     android:id="@+id/route_door_volume"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:layout_marginHorizontal="6dp"
+                                    android:layout_marginHorizontal="8dp"
                                     android:max="100"
                                     android:progress="60"/>
                                 <TextView
                                     android:id="@+id/route_door_volume_text"
-                                    android:layout_width="32dp"
+                                    android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:text="60%"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="10sp"
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="12sp"
                                     android:gravity="end"/>
                             </LinearLayout>
                             <Spinner
                                 android:id="@+id/route_door_channel"
                                 android:layout_width="match_parent"
-                                android:layout_height="28dp"
-                                android:layout_marginTop="2dp"/>
+                                android:layout_height="36dp"
+                                android:layout_marginTop="4dp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <androidx.appcompat.widget.SwitchCompat
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_door_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
-                                <androidx.appcompat.widget.SwitchCompat
+                                    android:text="@string/noise_reduction"
+                                    android:textSize="11sp"/>
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_door_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
+                                    android:text="@string/voice_enhance"
+                                    android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -467,77 +675,77 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardBackgroundColor="@color/background_card_light"
-                        app:cardElevation="0dp">
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="#FFFFFFFF"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFE5E7EB"
+                        app:strokeWidth="1dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="10dp">
+                            android:padding="14dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/route_lock"
-                                android:textColor="@android:color/black"
-                                android:textSize="13sp"
+                                android:textColor="#FF1F2937"
+                                android:textSize="15sp"
                                 android:textStyle="bold"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="6dp"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/volume"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="11sp"/>
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="13sp"/>
                                 <SeekBar
                                     android:id="@+id/route_lock_volume"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:layout_marginHorizontal="6dp"
+                                    android:layout_marginHorizontal="8dp"
                                     android:max="100"
                                     android:progress="70"/>
                                 <TextView
                                     android:id="@+id/route_lock_volume_text"
-                                    android:layout_width="32dp"
+                                    android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:text="70%"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="10sp"
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="12sp"
                                     android:gravity="end"/>
                             </LinearLayout>
                             <Spinner
                                 android:id="@+id/route_lock_channel"
                                 android:layout_width="match_parent"
-                                android:layout_height="28dp"
-                                android:layout_marginTop="2dp"/>
+                                android:layout_height="36dp"
+                                android:layout_marginTop="4dp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <androidx.appcompat.widget.SwitchCompat
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_lock_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
-                                <androidx.appcompat.widget.SwitchCompat
+                                    android:text="@string/noise_reduction"
+                                    android:textSize="11sp"/>
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_lock_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
+                                    android:text="@string/voice_enhance"
+                                    android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -546,84 +754,83 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardBackgroundColor="@color/background_card_light"
-                        app:cardElevation="0dp">
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="#FFFFFFFF"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFE5E7EB"
+                        app:strokeWidth="1dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="10dp">
+                            android:padding="14dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/route_soundwave"
-                                android:textColor="@android:color/black"
-                                android:textSize="13sp"
+                                android:textColor="#FF1F2937"
+                                android:textSize="15sp"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                
-                                android:textColor="@color/gray_600"
-                                android:textSize="10sp"/>
+                                android:text="@string/soundwave_channel_hint"
+                                android:textColor="#FF6B7280"
+                                android:textSize="11sp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="6dp"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/volume"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="11sp"/>
-                                <SeekBar
-                                    android:id="@+id/route_soundwave_volume"
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="13sp"/>
+                                <SeekBar                                    android:id="@+id/route_soundwave_volume"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:layout_marginHorizontal="6dp"
+                                    android:layout_marginHorizontal="8dp"
                                     android:max="100"
                                     android:progress="50"/>
                                 <TextView
                                     android:id="@+id/route_soundwave_volume_text"
-                                    android:layout_width="32dp"
+                                    android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:text="50%"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="10sp"
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="12sp"
                                     android:gravity="end"/>
                             </LinearLayout>
                             <Spinner
                                 android:id="@+id/route_soundwave_channel"
                                 android:layout_width="match_parent"
-                                android:layout_height="28dp"
-                                android:layout_marginTop="2dp"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="4dp"
                                 android:enabled="false"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <androidx.appcompat.widget.SwitchCompat
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_soundwave_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
-                                <androidx.appcompat.widget.SwitchCompat
+                                    android:text="@string/noise_reduction"
+                                    android:textSize="11sp"/>
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_soundwave_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
+                                    android:text="@string/voice_enhance"
+                                    android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -632,77 +839,77 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardBackgroundColor="@color/background_card_light"
-                        app:cardElevation="0dp">
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="#FFFFFFFF"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#FFE5E7EB"
+                        app:strokeWidth="1dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="10dp">
+                            android:padding="14dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/route_custom"
-                                android:textColor="@android:color/black"
-                                android:textSize="13sp"
+                                android:textColor="#FF1F2937"
+                                android:textSize="15sp"
                                 android:textStyle="bold"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="6dp"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/volume"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="11sp"/>
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="13sp"/>
                                 <SeekBar
                                     android:id="@+id/route_custom_volume"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:layout_marginHorizontal="6dp"
+                                    android:layout_marginHorizontal="8dp"
                                     android:max="100"
                                     android:progress="60"/>
                                 <TextView
                                     android:id="@+id/route_custom_volume_text"
-                                    android:layout_width="32dp"
+                                    android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:text="60%"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="10sp"
+                                    android:textColor="#FF1F2937"
+                                    android:textSize="12sp"
                                     android:gravity="end"/>
                             </LinearLayout>
                             <Spinner
                                 android:id="@+id/route_custom_channel"
                                 android:layout_width="match_parent"
-                                android:layout_height="28dp"
-                                android:layout_marginTop="2dp"/>
+                                android:layout_height="36dp"
+                                android:layout_marginTop="4dp"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <androidx.appcompat.widget.SwitchCompat
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_custom_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
-                                <androidx.appcompat.widget.SwitchCompat
+                                    android:text="@string/noise_reduction"
+                                    android:textSize="11sp"/>
+                                <com.google.android.material.materialswitch.MaterialSwitch
                                     android:id="@+id/route_custom_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    
-                                    android:textSize="10sp"
-                                    android:textColor="@android:color/black"/>
+                                    android:text="@string/voice_enhance"
+                                    android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -716,8 +923,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="\u6bcf\u4e2a\u97f3\u9891\u901a\u9053\u5747\u652f\u6301\u72ec\u7acb\u8c03\u8282\u97f3\u91cf\u3001\u964d\u566a\u548c\u4eba\u58f0\u589e\u5f3a"
-                android:textColor="@color/gray_600"
-                android:textSize="10sp"
+                android:textColor="#FF6B7280"
+                android:textSize="11sp"
                 android:gravity="center" />
 
         </LinearLayout>
