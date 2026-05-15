@@ -6,7 +6,8 @@ package com.egogame.vehiclehailer.model;
 public class VoiceItem {
     public enum VoiceTab {
         CUSTOM("FunBox_VoiceTabCustom", "自定义音效"),
-        SYSTEM("FunBox_VoiceTabSystem", "系统音效");
+        SYSTEM("FunBox_VoiceTabSystem", "系统音效"),
+        BLOCK("FunBox_VoiceTabBlock", "阻塞音效");
 
         private final String raw;
         private final String display;

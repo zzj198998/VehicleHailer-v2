@@ -90,9 +90,14 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // 使用ContextThemeWrapper确保Material组件主题不被系统覆写（OPPO realme ColorOS会强制覆写Theme.DeviceDefault）
-        ContextThemeWrapper contextWrapper = new ContextThemeWrapper(inflater.getContext(), R.style.Theme_VehicleHailer);
-        LayoutInflater themedInflater = inflater.cloneInContext(contextWrapper);
-        return themedInflater.inflate(R.layout.fragment_settings, container, false);
+        try {
+            ContextThemeWrapper contextWrapper = new ContextThemeWrapper(inflater.getContext(), R.style.Theme_VehicleHailer);
+            LayoutInflater themedInflater = inflater.cloneInContext(contextWrapper);
+            return themedInflater.inflate(R.layout.fragment_settings, container, false);
+        } catch (Exception e) {
+            android.util.Log.w("SettingsFragment", "ContextThemeWrapper失败，回退默认主题", e);
+            return inflater.inflate(R.layout.fragment_settings, container, false);
+        }
     }
 
     @Override

@@ -69,12 +69,11 @@
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textStyle="bold" />
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/channel_switch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="@string/setting_channel_inside"
                         android:textColor="@color/white"
                         android:checked="true" />
                 </LinearLayout>
@@ -100,12 +99,11 @@
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textStyle="bold" />
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/tts_enabled_switch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="@string/setting_tts_enabled"
                         android:textColor="@color/white" />
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -144,11 +142,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="12dp">
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/auto_play_switch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/setting_auto_play"
                         android:textColor="@color/white"
                         android:checked="true" />
                 </LinearLayout>
@@ -366,20 +363,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_hailing_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_hailing_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
                             </LinearLayout>
@@ -446,20 +443,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_door_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_door_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
                             </LinearLayout>
@@ -525,20 +522,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_lock_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_lock_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
                             </LinearLayout>
@@ -568,7 +565,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/soundwave_channel_hint"
+                                
                                 android:textColor="@color/gray_600"
                                 android:textSize="10sp"/>
                             <LinearLayout
@@ -611,20 +608,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_soundwave_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_soundwave_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
                             </LinearLayout>
@@ -690,20 +687,20 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_custom_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_custom_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
+                                    
                                     android:textSize="10sp"
                                     android:textColor="@android:color/black"/>
                             </LinearLayout>

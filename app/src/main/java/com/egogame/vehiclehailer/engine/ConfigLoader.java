@@ -188,7 +188,12 @@ public class ConfigLoader {
                 try {
                     int id = Integer.parseInt(fields[0]);
                     VoiceItem.VoiceTab tab = VoiceItem.VoiceTab.fromRaw(fields[3]);
-                    list.add(new VoiceItem(id, fields[1], fields[2], tab));
+                    // 补全路径前缀：assets/system_voice/
+                    String path = fields[2];
+                    if (!path.startsWith("system_voice/")) {
+                        path = "system_voice/" + path;
+                    }
+                    list.add(new VoiceItem(id, fields[1], path, tab));
                 } catch (NumberFormatException e) {
                     Log.w(TAG, "解析voice行失败: " + line);
                 }
