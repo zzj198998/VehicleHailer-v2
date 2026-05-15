@@ -71,8 +71,8 @@ public class VoiceListFragment extends Fragment {
             filterVoiceItems(position, searchInput.getText().toString());
         });
 
-        // 默认选中"自定义音效"
-        chipGroup.check(R.id.chip_custom);
+        // 默认显示全部
+        // 不选中任何chip，filterVoiceItems默认position=0即"全部"
 
         // 搜索过滤
         searchInput.addTextChangedListener(new TextWatcher() {
