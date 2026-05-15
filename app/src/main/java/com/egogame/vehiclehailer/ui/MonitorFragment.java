@@ -65,7 +65,7 @@ public class MonitorFragment extends Fragment {
         allProperties = new ArrayList<>();
         for (PropertyReg reg : currentRegs) {
             VehicleProperty vp = VehicleHailerApp.getInstance().getConfigLoader()
-                    .getVehicleProperty(reg.getPropertyName());
+                    .findPropertyByName(reg.getPropertyName());
             if (vp != null) {
                 allProperties.add(vp);
             }
@@ -94,7 +94,7 @@ public class MonitorFragment extends Fragment {
         for (int i = 0; i < catalogs.size(); i++) {
             Catalog cat = catalogs.get(i);
             Chip chip = new Chip(getContext());
-            chip.setText(cat.getName());
+            chip.setText(cat.getDisplayName());
             chip.setClickable(true);
             chip.setCheckable(true);
             final int index = i + 1; // +1因为0是"全部"
@@ -122,7 +122,7 @@ public class MonitorFragment extends Fragment {
         } else {
             Catalog selectedCatalog = catalogs.get(catalogIndex - 1);
             for (VehicleProperty vp : allProperties) {
-                if (vp.getCatalogId() == selectedCatalog.getId()) {
+                if (vp.getCatalog() == selectedCatalog.getCatalog()) {
                     filteredProperties.add(vp);
                 }
             }

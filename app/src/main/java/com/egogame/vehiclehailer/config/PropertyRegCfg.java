@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -186,7 +187,9 @@ public class PropertyRegCfg {
             }
             if (root.has("models")) {
                 JSONObject models = root.getJSONObject("models");
-                for (String modelName : models.keys()) {
+                java.util.Iterator<String> modelKeys = models.keys();
+                while (modelKeys.hasNext()) {
+                    String modelName = modelKeys.next() {
                     JSONArray regsArray = models.getJSONArray(modelName);
                     List<PropertyReg> regs = new ArrayList<>();
                     for (int i = 0; i < regsArray.length(); i++) {

@@ -42,7 +42,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         holder.nameText.setText(prop.getDisplayName());
 
         // 获取当前值
-        String currentValue = stateManager.getPropertyValue(prop.getName());
+        String currentValue = stateManager.getPropertyValue(prop.getPropertyName());
         holder.valueText.setText(currentValue != null ? currentValue : "—");
 
         // 根据控件类型显示不同UI
@@ -75,7 +75,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
                 }
                 chip.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     if (isChecked) {
-                        stateManager.setPropertyValue(prop.getName(), option.trim());
+                        stateManager.setPropertyValue(prop.getPropertyName(), option.trim());
                     }
                 });
                 chipGroup.addView(chip);
@@ -97,7 +97,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (fromUser) {
                     valueText.setText(String.valueOf(progress));
-                    stateManager.setPropertyValue(prop.getName(), String.valueOf(progress));
+                    stateManager.setPropertyValue(prop.getPropertyName(), String.valueOf(progress));
                 }
             }
 
