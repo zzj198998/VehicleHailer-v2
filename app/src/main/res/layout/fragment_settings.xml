@@ -37,7 +37,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/setting_car_model"
                         android:textColor="#FF1F2937"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -71,16 +70,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/setting_channel"
                         android:textColor="#FF1F2937"
                         android:textSize="17sp"
                         android:textStyle="bold" />
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/channel_switch"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
                         android:layout_marginTop="8dp"
-                        android:text="@string/setting_channel_inside"
                         android:textSize="15sp"
                         android:checked="true" />
                 </LinearLayout>
@@ -104,16 +101,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/setting_tts"
                         android:textColor="#FF1F2937"
                         android:textSize="17sp"
                         android:textStyle="bold" />
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/tts_enabled_switch"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
                         android:layout_marginTop="8dp"
-                        android:text="@string/setting_tts_enabled"
                         android:textSize="15sp" />
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -155,11 +150,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/auto_play_switch"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
-                        android:text="@string/setting_auto_play"
                         android:textSize="15sp"
                         android:checked="true" />
                 </LinearLayout>
@@ -197,7 +191,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="@string/audio_stream_type"
                                 android:textColor="#FF374151"
                                 android:textSize="13sp"/>
                             <Spinner
@@ -210,7 +203,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="@string/audio_content_type"
                                 android:textColor="#FF374151"
                                 android:textSize="13sp"/>
                             <Spinner
@@ -228,7 +220,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:text="@string/gain_control"
                                 android:textColor="#FF1F2937"
                                 android:textSize="14sp"
                                 android:textStyle="bold"/>
@@ -242,7 +233,6 @@
                                 <TextView
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/gain_tts"
                                     android:textColor="#FF374151"
                                     android:textSize="12sp"/>
                                 <SeekBar
@@ -272,7 +262,6 @@
                                 <TextView
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/gain_hail"
                                     android:textColor="#FF374151"
                                     android:textSize="12sp"/>
                                 <SeekBar
@@ -302,7 +291,6 @@
                                 <TextView
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/gain_record"
                                     android:textColor="#FF374151"
                                     android:textSize="12sp"/>
                                 <SeekBar
@@ -332,7 +320,6 @@
                                 <TextView
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/gain_limiter"
                                     android:textColor="#FF374151"
                                     android:textSize="12sp"/>
                                 <SeekBar
@@ -374,15 +361,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/connection_title"
-                    android:textColor="#FF1F2937"
+                        android:textColor="#FF1F2937"
                     android:textSize="17sp"
                     android:textStyle="bold" />
                     <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/connection_obd"
                     android:textColor="#FF6B7280"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -390,7 +375,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/connection_obd_desc"
                     android:textColor="#FF6B7280"
                     android:textSize="13sp"
                     android:lineSpacingExtra="4dp" />
@@ -398,7 +382,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/connection_logcat"
                     android:textColor="#FF6B7280"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -406,7 +389,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/connection_logcat_desc"
                     android:textColor="#FF6B7280"
                     android:textSize="13sp"
                     android:lineSpacingExtra="4dp" />
@@ -417,7 +399,6 @@
                         android:layout_marginTop="10dp"
                         android:padding="12dp"
                         android:background="@drawable/code_bg"
-                        android:text="@string/connection_adb_cmd_self"
                         android:textColor="#FF059669"
                         android:textSize="11sp"
                         android:fontFamily="monospace"
@@ -430,7 +411,6 @@
                         android:layout_marginTop="6dp"
                         android:padding="12dp"
                         android:background="@drawable/code_bg"
-                        android:text="@string/connection_adb_cmd_other"
                         android:textColor="#FF059669"
                         android:textSize="11sp"
                         android:fontFamily="monospace"
@@ -441,8 +421,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="@string/connection_adb_hint"
-                    android:textColor="#FF9CA3AF"
+                        android:textColor="#FF9CA3AF"
                     android:textSize="11sp"
                     android:gravity="center" />
                 </LinearLayout>
@@ -500,7 +479,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/route_title"
                         android:textColor="#FF1F2937"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -509,7 +487,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="@string/route_desc"
                         android:textColor="#FF6B7280"
                         android:textSize="13sp" />
                     <!-- 1. 喊话输出 -->
@@ -530,7 +507,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/route_hailing"
                                 android:textColor="#FF1F2937"
                                 android:textSize="15sp"
                                 android:textStyle="bold"/>
@@ -543,7 +519,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/volume"
                                     android:textColor="#FF1F2937"
                                     android:textSize="13sp"/>
                                 <SeekBar
@@ -573,19 +548,17 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="6dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_hailing_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
                                     android:textSize="12sp"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_hailing_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
                                     android:textSize="12sp"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -610,7 +583,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/route_door"
                                 android:textColor="#FF1F2937"
                                 android:textSize="15sp"
                                 android:textStyle="bold"/>
@@ -623,7 +595,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/volume"
                                     android:textColor="#FF1F2937"
                                     android:textSize="13sp"/>
                                 <SeekBar
@@ -653,19 +624,17 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_door_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
                                     android:textSize="11sp"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_door_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
                                     android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -689,7 +658,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/route_lock"
                                 android:textColor="#FF1F2937"
                                 android:textSize="15sp"
                                 android:textStyle="bold"/>
@@ -702,7 +670,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/volume"
                                     android:textColor="#FF1F2937"
                                     android:textSize="13sp"/>
                                 <SeekBar
@@ -732,19 +699,17 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_lock_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
                                     android:textSize="11sp"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_lock_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
                                     android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -768,14 +733,12 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/route_soundwave"
                                 android:textColor="#FF1F2937"
                                 android:textSize="15sp"
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/soundwave_channel_hint"
                                 android:textColor="#FF6B7280"
                                 android:textSize="11sp"/>
                             <LinearLayout
@@ -787,7 +750,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/volume"
                                     android:textColor="#FF1F2937"
                                     android:textSize="13sp"/>
                                 <SeekBar                                    android:id="@+id/route_soundwave_volume"
@@ -817,19 +779,17 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_soundwave_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
                                     android:textSize="11sp"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_soundwave_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
                                     android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -853,7 +813,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/route_custom"
                                 android:textColor="#FF1F2937"
                                 android:textSize="15sp"
                                 android:textStyle="bold"/>
@@ -866,7 +825,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/volume"
                                     android:textColor="#FF1F2937"
                                     android:textSize="13sp"/>
                                 <SeekBar
@@ -896,19 +854,17 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:orientation="horizontal">
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_custom_noise"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/noise_reduction"
                                     android:textSize="11sp"/>
-                                <com.google.android.material.materialswitch.MaterialSwitch
+                                <androidx.appcompat.widget.SwitchCompat
                                     android:id="@+id/route_custom_voice"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="@string/voice_enhance"
                                     android:textSize="11sp"/>
                             </LinearLayout>
                         </LinearLayout>

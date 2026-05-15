@@ -115,6 +115,8 @@ public class SettingsFragment extends Fragment {
         ttsEnabledSwitch = view.findViewById(R.id.tts_enabled_switch);
         ttsUrlInput = view.findViewById(R.id.tts_url_input);
         autoPlaySwitch = view.findViewById(R.id.auto_play_switch);
+        safeSetSwitchText(ttsEnabledSwitch, R.string.setting_tts_enabled);
+        safeSetSwitchText(autoPlaySwitch, R.string.setting_auto_play);
 
         // 车型adb信息控件
         // carModelPackageView = view.findViewById(R.id.car_model_spinner); // 借用提示区域（已废弃，Spinner不能强转TextView）
